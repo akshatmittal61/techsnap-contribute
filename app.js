@@ -18,7 +18,7 @@ fab.addEventListener("click", () => {
 const checkOpt = () => {
 	if (
 		document.querySelector("select").value ===
-		document.querySelector("select option").innerHTML
+		document.querySelector("select option").value
 	)
 		document.querySelector("select").style.color = "rgba(0,0,0,0.5)";
 	else document.querySelector("select").style.color = "var(--tcolor)";
