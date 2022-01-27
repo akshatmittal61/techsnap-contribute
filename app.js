@@ -15,8 +15,6 @@ window.addEventListener("scroll", () => {
 fab.addEventListener("click", () => {
 	window.scrollTo(0, 0);
 });
-console.log(document.querySelector("select").value);
-console.log(document.querySelector("select option").innerHTML);
 const checkOpt = () => {
 	if (
 		document.querySelector("select").value ===
