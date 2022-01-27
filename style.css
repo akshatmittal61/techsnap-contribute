@@ -321,7 +321,8 @@ a:hover, a:active, a:focus, a:visited {
 }
 
 input,
-textarea {
+textarea,
+select {
   font: inherit;
   text-rendering: auto;
   background-color: var(--bgcolor);
@@ -344,13 +345,20 @@ textarea:hover,
 textarea:focus,
 textarea:active,
 textarea:focus-within,
-textarea:focus-visible {
+textarea:focus-visible,
+select,
+select:hover,
+select:focus,
+select:active,
+select:focus-within,
+select:focus-visible {
   border: none;
   outline: none;
 }
 
 input,
-textarea {
+textarea,
+select {
   border-radius: 5px;
   background-color: var(--back-shadow-light);
   transition: all var(--transition-time) ease-in-out;
@@ -360,13 +368,20 @@ textarea {
 }
 input:active, input:focus,
 textarea:active,
-textarea:focus {
+textarea:focus,
+select:active,
+select:focus {
   background-color: var(--back-shadow);
 }
 input::placeholder,
-textarea::placeholder {
+textarea::placeholder,
+select::placeholder {
   user-select: none;
   font-size: 0.875rem;
+}
+
+option {
+  background-color: var(--bgcolor);
 }
 
 button {
@@ -807,6 +822,66 @@ button:hover, button:active, button:focus, button:focus-visible, button:focus-wi
   min-height: 30vh;
 }
 
+.hero {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero > * {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+.hero-left-head {
+  width: 70%;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  font-weight: 700;
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
+}
+.hero-left-body {
+  width: 70%;
+  padding: 1rem 0;
+  margin: 0.25rem 0;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+.hero-right-head {
+  width: 75%;
+  font-size: 1.75rem;
+  line-height: 2rem;
+  font-weight: 550;
+  margin: 0.5rem 0;
+}
+.hero-right-body {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-right-form {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+}
+.hero-right-form-group {
+  width: 100%;
+  display: flex;
+  margin: 0.25rem 0;
+}
+.hero-right-form-group > * {
+  width: 100%;
+}
+.hero-right-form-group:first-child > * {
+  width: 50%;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -835,3 +910,5 @@ button:hover, button:active, button:focus, button:focus-visible, button:focus-wi
 .dispn {
   display: none !important;
 }
+
+/*# sourceMappingURL=style.css.map */
