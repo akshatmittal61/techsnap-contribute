@@ -1,0 +1,151 @@
+.become {
+	width: 100%;
+	margin: 2rem 0;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-flow: column;
+	&-head {
+		width: 100%;
+		font-size: 2rem;
+		font-weight: 700;
+		line-height: 2.5rem;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		margin: 2rem 0;
+		padding: 0 3rem;
+		& span {
+			position: relative;
+			&::after,
+			&::before {
+				content: "";
+				position: absolute;
+				top: 120%;
+				left: 0;
+				width: 175%;
+				height: 0.05rem;
+				background-color: var(--tcolor);
+			}
+			&::before {
+				top: 110%;
+			}
+		}
+	}
+	&-container {
+		width: 90%;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		overflow: hidden;
+		&:nth-child(2) {
+			height: 31rem;
+            @include respond(tab){
+                height: 45%;
+            }
+		}
+		&:nth-child(3) {
+			height: 45rem;
+		}
+		@for $i from 1 through 4 {
+			&:nth-child(#{$i}) {
+				@if $i % 2==0 {
+					flex-flow: row-reverse;
+				} @else {
+					flex-flow: row;
+				}
+			}
+		}
+		@include respond(tab) {
+			@for $i from 1 through 4 {
+				&:nth-child(#{$i}) {
+					flex-flow: column;
+				}
+			}
+			width: 85%;
+			margin: 1rem 0;
+		}
+        @include respond(tab){
+            flex-flow: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+	}
+	&-gallery {
+		width: 50%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+        @include respond(tab){
+            margin: 0 auto;
+            width: 90%;
+            justify-content: space-evenly;
+        }
+		&__img {
+			object-fit: cover;
+			max-width: 85%;
+			max-height: 85%;
+			position: absolute;
+            transition: all var(--transition-time) ease-in-out;
+            @include respond(tab){
+                position: unset;
+                max-width: 45%;
+                max-height: 100%;
+            }
+			&:nth-child(1) {
+				top: 0;
+				left: 0;
+				z-index: 1;
+			}
+			&:nth-child(2) {
+				top: 25%;
+				left: 25%;
+				z-index: 2;
+			}
+			&:nth-child(3) {
+				top: 50%;
+				left: 50%;
+				z-index: 3;
+			}
+			&:hover {
+				z-index: 5;
+                transform: scale(1.05);
+			}
+		}
+	}
+	&-content {
+		width: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-flow: column;
+        @include respond(tab){
+            width: 90%;
+            margin: 0 auto;
+        }
+	}
+	&-box {
+		width: 100%;
+		padding: 1rem 2rem;
+		&__head {
+			font-size: 1.75rem;
+			line-height: 2rem;
+			font-weight: 700;
+			padding: 0.6rem 0;
+            @include respond(tab){
+                text-align: center;
+            }
+		}
+		&__content {
+			width: 80%;
+			line-height: 1.35rem;
+			padding: 0.5rem 0.2rem;
+            @include respond(tab){
+                width: 100%;
+                text-align: center;
+            }
+		}
+	}
+}
